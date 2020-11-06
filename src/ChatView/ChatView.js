@@ -1,13 +1,14 @@
 import Chat from '../Chat/Chat';
 import io from 'socket.io-client';
 import React from 'react';
-const host='a5ec07554c0a.ngrok.io';
+const host='6fa41f1a6482.ngrok.io';
 //const host='localhost:3001';
 const socket = io("ws://"+host, {
     reconnectionDelayMax: 10000,
     query: {
         auth: "123"
-    }
+    },
+    transport : ['websocket']
 });
 export default class ChatView extends React.Component {
     constructor(props) {
