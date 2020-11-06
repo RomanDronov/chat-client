@@ -104,9 +104,6 @@ export default class ChatView extends React.Component {
                 sender: this.meNick
             }
         });
-        let messages = this.state.messages;
-        messages.push({ text: document.getElementById('text').value, sender: this.meNick })
-        this.setState({ messages: messages });
     }
     render() {
         return (
