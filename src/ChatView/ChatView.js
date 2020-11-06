@@ -1,8 +1,8 @@
 import Chat from '../Chat/Chat';
 import io from 'socket.io-client';
 import React from 'react';
-//const host='9e0e4ccd8570.ngrok.io';
-const host='localhost:3001';
+const host='a5ec07554c0a.ngrok.io';
+//const host='localhost:3001';
 const socket = io("ws://"+host, {
     reconnectionDelayMax: 10000,
     query: {
