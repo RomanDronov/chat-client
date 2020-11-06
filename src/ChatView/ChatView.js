@@ -3,7 +3,7 @@ import io from 'socket.io-client';
 import React from 'react';
 const host='6fa41f1a6482.ngrok.io';
 //const host='localhost:3001';
-const socket = io("ws://"+host, {
+const socket = io("wss://"+host, {
     reconnectionDelayMax: 10000,
     query: {
         auth: "123"
@@ -26,7 +26,7 @@ export default class ChatView extends React.Component {
     onCreateButton() {
         let meNick = document.getElementById('me').value;
         this.meNick = meNick;
-        fetch('http://'+host+'/create', {
+        fetch('https://'+host+'/create', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -49,7 +49,7 @@ export default class ChatView extends React.Component {
     }
     onFindButton() {
         let friendNick = document.getElementById('friend').value;
-        fetch('http://'+host+'/createChat', {
+        fetch('https://'+host+'/createChat', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -74,7 +74,7 @@ export default class ChatView extends React.Component {
         )
     }
     requestMessages(id) {
-        fetch('http://'+host+'/requestMessages', {
+        fetch('https://'+host+'/requestMessages', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
